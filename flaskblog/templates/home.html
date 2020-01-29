@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% for post in posts %}
+
+        <article class="media content-section c">
+
+          <div class="media-body">
+
+            <div class="article-metadata">
+
+              <a class="mr-3"href="#">{{ post.author.username }}</a>
+
+              <small class="text-muted"style="color:#F8F8FF">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+
+            </div>
+
+            <h2><a class="article-title"style="color:#F8F8FF"href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+
+            <p class="article-content" style="color:rgb(235, 243, 243)">{{ post.content }}</p>
+
+          </div>
+
+        </article>
+
+    {% endfor %}
+
+{% endblock content %}

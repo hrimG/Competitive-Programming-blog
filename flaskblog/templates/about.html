@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for post in posts %}
+      <article class="media content-section c">
+
+
+          <div class="media-body">
+              
+            <h2><a class="article-title"style="color:#F8F8FF">{{ post.name }}</a></h2>
+            
+            <h5 class="article-content"style="color:#F8F8FF">{{ post.description }}</h5>
+            </div>
+
+          </div>
+        </div>
+
+        </article>
+      
+    {% endfor %}  
+
+{% endblock content %}
